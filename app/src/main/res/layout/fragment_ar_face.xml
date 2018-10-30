@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:surfaceview="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/tools"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/layout_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.simoncherry.artest.ui.custom.AutoFitTextureView
+            android:id="@+id/texture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+        <ImageView
+            android:id="@+id/iv_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/texture"
+            android:layout_alignRight="@+id/texture"
+            android:layout_alignTop="@+id/texture"
+            android:layout_alignBottom="@+id/texture"/>
+
+
+
+        <com.simoncherry.artest.ui.custom.TrasparentTitleView
+            android:id="@+id/results"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+
+    <include
+        layout="@layout/relative_layout_loader_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <org.rajawali3d.view.SurfaceView
+        android:id="@+id/rajwali_surface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        surfaceview:frameRate="60.0"
+        surfaceview:renderMode="RENDER_WHEN_DIRTY"/>
+
+
+    <!--<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="490dp"
+        android:background="@drawable/logo"></LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_gravity="top"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="40dp"
+        >
+
+        <CheckBox
+            android:id="@+id/check_show_window"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:checked="true"/>
+
+        <CheckBox
+            android:id="@+id/check_land_mark"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:checked="true"
+            android:text=""
+            android:textColor="@android:color/white" />
+
+        <CheckBox
+            android:id="@+id/check_show_model"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:buttonTint="#ffffff"
+            android:textSize="17sp"
+            android:text="얼굴 이미지"
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/check_draw_mode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:checked="false"/>
+
+        <CheckBox
+            android:id="@+id/check_show_ornament"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:buttonTint="#ffffff"
+            android:text="마스크"
+            android:textSize="17sp"
+            android:checked="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="#8eb4e3">
+
+        <Button
+            android:id="@+id/btn_build_model"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btn_reset_face"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/btn_face_sheet"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textColor="#ffffff"
+            android:text="갤러리"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btn_ornament_sheet"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textColor="#ffffff"
+            android:text="마스크"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btn_filter_sheet"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:textColor="#ffffff"
+            android:text="필터"
+            android:textSize="17sp"/>
+
+        <Button
+            android:id="@+id/btn_capture"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:background="@android:color/transparent"
+            android:textColor="@android:color/white"
+            android:text="캡처"
+            android:textSize="20sp"
+            />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="150dp"
+        android:textColor="@android:color/white"
+        test:text=""
+        android:visibility="visible"/>
+
+</FrameLayout>
+
+
+
+
+
